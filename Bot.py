@@ -5,7 +5,7 @@ import discord
 from dotenv import load_dotenv
 import pymongo
 
-myclient = pymongo.MongoClient("mongodb+srv://nestelo:Fusrodah@nestelobot.ch2im9a.mongodb.net/")
+myclient = pymongo.MongoClient('<MONGO CONNECTION LINK>')
 mydb = myclient["NesteloBot"]
 mycol = mydb["Word Count"]
 
