@@ -67,10 +67,10 @@ async def word_count(ctx, username = None): #takes in a username as a parameter
     if mycol.count_documents({ "username": username }, limit = 1) == 0:
         await ctx.send(username + " has said that word 0 times")
         return
-    else:
-        number_said = str(mycol.find_one({"username": username}, {'_id': False, 'hello_said': 1}))
-        x = number_said.split(": ")
-        number = x[1][:-1]
-        await ctx.send(username + " has said that word " + number + " times")
+    
+    number_said = str(mycol.find_one({"username": username}, {'_id': False, 'hello_said': 1}))
+    x = number_said.split(": ")
+    number = x[1][:-1]
+    await ctx.send(username + " has said that word " + number + " times")
 
 bot.run(TOKEN)
